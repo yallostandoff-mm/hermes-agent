@@ -20,8 +20,13 @@ RUN pip install --no-cache-dir -e ".[all]" "python-telegram-bot[webhooks]" --bre
 WORKDIR /opt/hermes
 
 RUN mkdir -p /opt/data && chmod 777 /opt/data
+
+# Прописуємо модель прямо тут, щоб вона точно була доступна
+ENV MODEL_NAME=qwen/qwen-2.5-72b-instruct
+ENV HERMES_MODEL=qwen/qwen-2.5-72b-instruct
 ENV HERMES_HOME=/opt/data
+
 VOLUME [ "/opt/data" ]
 
-# МІНЯЄМО ТУТ: Жорстко вказуємо модель для OpenRouter
-CMD ["hermes", "gateway", "--model", "qwen/qwen-2.5-72b-instruct"]
+# ВИПРАВЛЕНО: Додано "run" перед запуском
+CMD ["hermes", "gateway", "run"]
