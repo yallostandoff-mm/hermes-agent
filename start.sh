@@ -7,12 +7,12 @@ mkdir -p /root/.hermes
 # Змінна ${GITHUB_TOKEN} автоматично візьметься з налаштувань Render
 cat <<EOF > /root/.hermes/config.yaml
 model:
-  default: "${MODEL_NAME:-openai/gpt-oss-120b:free}"
+  default: "${MODEL_NAME:-openai/gpt-oss-120b}"
   provider: "openrouter"
   base_url: "https://openrouter.ai/api/v1"
 
 gateway:
-  model: "${MODEL_NAME:-openai/gpt-oss-120b:free}"
+  model: "${MODEL_NAME:-openai/gpt-oss-120b}"
 
 mcp_servers:
   github:
