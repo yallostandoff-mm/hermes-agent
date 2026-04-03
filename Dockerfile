@@ -29,4 +29,4 @@ ENV HERMES_HOME=/opt/data
 VOLUME [ "/opt/data" ]
 
 # ВИПРАВЛЕНО: Додано "run" перед запуском
-CMD ["hermes", "gateway", "run", "--model", "qwen/qwen-2.5-72b-instruct"]
+CMD ["hermes", "gateway", "run"]
